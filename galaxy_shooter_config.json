@@ -515,8 +515,8 @@
     "vibrationDefault": false
   },
   "store": {
-    "packageName": "com.fuino.galaxy.shooter.game",
-    "updateUrl": "https://play.google.com/store/apps/details?id=com.fuino.galaxy.shooter.game",
+    "packageName": "com.fuino.galaxy.shooter.space.combat.game",
+    "updateUrl": "https://play.google.com/store/apps/details?id=com.fuino.galaxy.shooter.space.combat.game",
     "privacyPolicyUrl": ""
   }
 }
