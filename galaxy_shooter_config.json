@@ -489,7 +489,7 @@
     ]
   },
   "ads": {
-    "enabled": false,
+    "enabled": true,
     "bannerScreens": [
       "main_menu",
       "level_select",
