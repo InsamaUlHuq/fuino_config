@@ -438,7 +438,7 @@
     ],
     "extraCoreScoreAtMax": 50,
     "coreBoost": {
-      "perLevel": 0.15,
+      "perLevel": 0.5,
       "max": 5.0
     }
   },
