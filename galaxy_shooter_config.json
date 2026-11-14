@@ -16,7 +16,7 @@
       "addOneEveryNLevels": 4
     },
     "waveDelaySec": 1.5,
-    "loseShipLevelOnDeath": true,
+    "loseShipLevelOnDeath": false,
     "resetShipOnGameOver": true
   },
   "scaling": {
