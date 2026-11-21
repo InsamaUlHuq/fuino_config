@@ -1,0 +1,150 @@
+{
+  "configVersion": 15,
+  "minAppVersion": "0.1.0",
+
+  "player": {
+    "walkSpeed": 4.0,
+    "boostSpeedMultiplier": 1.4,
+    "boostDuration": 1.5,
+    "maxHealth": 3,
+    "invulnerableAfterBite": 0.8,
+    "backstabRange": 1.05,
+    "backstabArcDegrees": 180,
+    "dragDeadZoneTiles": 0.3,
+    "sneakDistanceTiles": 1.5,
+    "sneakSpeedMultiplier": 0.55,
+    "frontAttackDamage": 99,
+    "slashDuration": 0.25,
+    "hitStopDuration": 0.1,
+    "hitStopTimeScale": 0.3,
+    "whistleRadius": 8,
+    "whistleCooldown": 6
+  },
+
+  "zombie": {
+    "biteRange": 1.0,
+    "biteWindup": 0.4,
+    "biteCooldown": 1.2,
+    "chaseSpeedMultiplier": 2.2,
+    "detectionBaseSeconds": 0.15,
+    "detectionDistanceSeconds": 0.35,
+    "roarDuration": 0.5,
+    "searchDuration": 2.0,
+    "searchSpots": 3,
+    "searchSpotRadius": 3,
+    "searchSpotLookSeconds": 1.2,
+    "visionRays": 20,
+    "perceptionHz": 10,
+    "fullMapAlertFromLevel": 40
+  },
+
+  "difficulty": [
+    { "key": "zombieCount",   "baseValue": 2,   "ratePerLevel": 0.5,   "cap": 30,  "roundDown": true },
+    { "key": "visionRange",   "baseValue": 3,   "ratePerLevel": 0.08,  "cap": 7,   "roundDown": false },
+    { "key": "visionAngle",   "baseValue": 60,  "ratePerLevel": 0.6,   "cap": 90,  "roundDown": false },
+    { "key": "patrolSpeed",   "baseValue": 1.2, "ratePerLevel": 0.012, "cap": 1.8, "roundDown": false },
+    { "key": "roarRadius",    "baseValue": 4,   "ratePerLevel": 0.16,  "cap": 12,  "roundDown": false },
+    { "key": "alertDuration", "baseValue": 4,   "ratePerLevel": 0.08,  "cap": 8,   "roundDown": false },
+    { "key": "alertSpeed",    "baseValue": 1.4, "ratePerLevel": 0.025, "cap": 3.0, "roundDown": false },
+    { "key": "killAlertRadius", "baseValue": 3, "ratePerLevel": 0.12,  "cap": 9,   "roundDown": false },
+    { "key": "mapSegments",   "baseValue": 1,   "ratePerLevel": 0.125, "cap": 5,   "roundDown": true }
+  ],
+
+  "zombieTypes": [
+    { "id": "walker",   "unlockLevel": 1,  "spawnWeight": 10, "hitsToKill": 1, "staggerDuration": 0,   "crystalDrop": 1, "speedMultiplier": 1.0, "chaseSpeedVsPlayer": 0,   "visionRangeMultiplier": 1.0, "visionAngleOverride": 0,   "alertsWholeMap": false, "hiddenByObstacles": false, "roarOnHit": false, "scale": 1.0 },
+    { "id": "runner",   "unlockLevel": 8,  "spawnWeight": 3,  "hitsToKill": 1, "staggerDuration": 0,   "crystalDrop": 2, "speedMultiplier": 1.2, "chaseSpeedVsPlayer": 1.1, "visionRangeMultiplier": 0.7, "visionAngleOverride": 0,   "alertsWholeMap": false, "hiddenByObstacles": false, "roarOnHit": false, "scale": 0.95 },
+    { "id": "brute",    "unlockLevel": 15, "spawnWeight": 2,  "hitsToKill": 2, "staggerDuration": 1.5, "crystalDrop": 3, "speedMultiplier": 0.8, "chaseSpeedVsPlayer": 0,   "visionRangeMultiplier": 1.0, "visionAngleOverride": 0,   "alertsWholeMap": false, "hiddenByObstacles": false, "roarOnHit": false, "scale": 1.35 },
+    { "id": "screamer", "unlockLevel": 25, "spawnWeight": 1,  "hitsToKill": 1, "staggerDuration": 0,   "crystalDrop": 3, "speedMultiplier": 1.0, "chaseSpeedVsPlayer": 0,   "visionRangeMultiplier": 1.0, "visionAngleOverride": 0,   "alertsWholeMap": true,  "hiddenByObstacles": false, "roarOnHit": false, "scale": 1.0 },
+    { "id": "crawler",  "unlockLevel": 35, "spawnWeight": 2,  "hitsToKill": 1, "staggerDuration": 0,   "crystalDrop": 1, "speedMultiplier": 0.9, "chaseSpeedVsPlayer": 0,   "visionRangeMultiplier": 0.6, "visionAngleOverride": 140, "alertsWholeMap": false, "hiddenByObstacles": true,  "roarOnHit": false, "scale": 0.85 },
+    { "id": "boss",     "unlockLevel": 20, "spawnWeight": 0,  "hitsToKill": 3, "staggerDuration": 1.5, "crystalDrop": 5, "speedMultiplier": 0.7, "chaseSpeedVsPlayer": 0,   "visionRangeMultiplier": 1.2, "visionAngleOverride": 0,   "alertsWholeMap": false, "hiddenByObstacles": false, "roarOnHit": true,  "scale": 1.6 }
+  ],
+
+  "level": {
+    "widthTiles": 12,
+    "segmentHeightTiles": 24,
+    "minWalkwayTiles": 2,
+    "zombieMinSpawnDistance": 8,
+    "patrolWaypointsMin": 2,
+    "patrolWaypointsMax": 4,
+    "safeStartRadius": 3,
+    "maxStartCoverage": 0.4,
+    "minCoverObstaclesPerSegment": 3,
+    "maxGenerationAttempts": 20,
+    "bossFirstLevel": 20,
+    "bossEveryNLevels": 10,
+    "tutorialLevels": 3,
+    "introDuration": 1.5
+  },
+
+  "visuals": {
+    "rotateCharacters": false,
+    "playerHeightTiles": 2.4,
+    "zombieHeightTiles": 2.4,
+    "walkBobTiles": 0.06,
+    "walkSwayDegrees": 5
+  },
+
+  "camera": {
+    "lookAheadTiles": 2.0,
+    "followSmoothTime": 0.15
+  },
+
+  "scoring": {
+    "crystalsPerKillMin": 20,
+    "crystalsPerKillMax": 50,
+    "crystalScatterRadius": 1.6,
+    "crystalPickupRadius": 2.4,
+    "crystalGroundDelay": 0.35,
+    "crystalFlyDuration": 0.3,
+    "scorePerCrystal": 1,
+    "clearBonusBase": 50,
+    "clearBonusPerLevel": 5,
+    "stealthBonusScore": 100,
+    "clearCrystalsBase": 50,
+    "clearCrystalsLevelDivisor": 1,
+    "threeStarBonusCrystals": 50,
+    "keepCrystalsOnDefeat": true
+  },
+
+  "items": [
+    { "id": "injection",  "enabled": true,  "price": 150, "maxCarry": 3, "healAmount": 1,  "healFull": false, "boostSeconds": 0 },
+    { "id": "healthKit",  "enabled": true,  "price": 400, "maxCarry": 2, "healAmount": 0,  "healFull": true,  "boostSeconds": 0 },
+    { "id": "adrenaline", "enabled": false, "price": 250, "maxCarry": 2, "healAmount": 0,  "healFull": false, "boostSeconds": 5 }
+  ],
+
+  "upgrades": [
+    { "id": "maxHealth",     "valuePerStep": 1,    "prices": [1500, 4000] },
+    { "id": "moveSpeed",     "valuePerStep": 0.05, "prices": [600, 1200, 1800, 2400, 3000] },
+    { "id": "bladeReach",    "valuePerStep": 0.1,  "prices": [800, 1600, 2400] },
+    { "id": "crystalMagnet", "valuePerStep": 0.5,  "prices": [500, 1000, 1500] },
+    { "id": "quietSteps",    "valuePerStep": 0.1,  "prices": [1000, 2000, 3000] }
+  ],
+
+  "ads": {
+    "enabled": true,
+    "revivesPerLevel": 1,
+    "reviveCountdown": 5,
+    "reviveKnockbackRadius": 2.0,
+    "doubleCrystalsEnabled": true,
+    "freeInjectionsPerDay": 3,
+    "crystalBonusAmount": 200,
+    "crystalBonusPerDay": 5,
+    "provider": "admob",
+    "androidAppId": "ca-app-pub-4307998774623144~5581710640",
+    "androidRewardedUnitId": "ca-app-pub-4307998774623144/7447511998",
+    "testRewardedUnitId": "ca-app-pub-3940256099942544/5224354917",
+    "testBannerUnitId": "ca-app-pub-3940256099942544/9214589741",
+    "testInterstitialUnitId": "ca-app-pub-3940256099942544/1033173712",
+    "forceTestAds": false,
+    "retryLoadSeconds": 20,
+    "bannersEnabled": true,
+    "androidBannerUnitId": "ca-app-pub-4307998774623144/7821036184",
+    "interstitialsEnabled": true,
+    "androidInterstitialUnitId": "ca-app-pub-4307998774623144/9081971953",
+    "interstitialEveryLevels": 3,
+    "interstitialFromLevel": 4,
+    "interstitialMinSeconds": 60,
+    "interstitialNoticeSeconds": 1.5,
+    "reviewAfterLevel": 3
+  }
+}
