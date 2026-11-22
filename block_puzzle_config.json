@@ -3,7 +3,6 @@
   "config_version": 1,
   "updated_at": "2026-11-22T00:00:00Z",
   "latest_config_url": "",
-
   "app": {
     "min_supported_version_code": 1,
     "latest_version_code": 1,
@@ -15,40 +14,37 @@
     "terms_url": "",
     "support_email": ""
   },
-
   "board": {
     "rows": 8,
     "cols": 8,
     "tray_size": 3,
     "colors": ["blue", "green", "purple", "red", "yellow", "orange", "cyan"]
   },
-
   "pieces": [
-    { "id": "mono",     "cells": [[0,0]],                               "weight": 6, "unlock_level": 1 },
-    { "id": "domino_h", "cells": [[0,0],[0,1]],                         "weight": 8, "unlock_level": 1 },
-    { "id": "domino_v", "cells": [[0,0],[1,0]],                         "weight": 8, "unlock_level": 1 },
-    { "id": "tri_h",    "cells": [[0,0],[0,1],[0,2]],                   "weight": 7, "unlock_level": 1 },
-    { "id": "tri_v",    "cells": [[0,0],[1,0],[2,0]],                   "weight": 7, "unlock_level": 1 },
-    { "id": "square2",  "cells": [[0,0],[0,1],[1,0],[1,1]],             "weight": 7, "unlock_level": 1 },
-    { "id": "corner_s", "cells": [[0,0],[1,0],[1,1]],                   "weight": 6, "unlock_level": 1 },
-    { "id": "l4",       "cells": [[0,0],[1,0],[2,0],[2,1]],             "weight": 5, "unlock_level": 2 },
-    { "id": "j4",       "cells": [[0,0],[0,1],[1,1],[2,1]],             "weight": 5, "unlock_level": 2 },
-    { "id": "t4",       "cells": [[0,0],[0,1],[0,2],[1,1]],             "weight": 5, "unlock_level": 3 },
-    { "id": "s4",       "cells": [[0,1],[0,2],[1,0],[1,1]],             "weight": 4, "unlock_level": 4 },
-    { "id": "z4",       "cells": [[0,0],[0,1],[1,1],[1,2]],             "weight": 4, "unlock_level": 4 },
-    { "id": "line4_h",  "cells": [[0,0],[0,1],[0,2],[0,3]],             "weight": 4, "unlock_level": 3 },
-    { "id": "line4_v",  "cells": [[0,0],[1,0],[2,0],[3,0]],             "weight": 4, "unlock_level": 3 },
-    { "id": "line5_h",  "cells": [[0,0],[0,1],[0,2],[0,3],[0,4]],       "weight": 3, "unlock_level": 5 },
-    { "id": "line5_v",  "cells": [[0,0],[1,0],[2,0],[3,0],[4,0]],       "weight": 3, "unlock_level": 5 },
-    { "id": "corner_l", "cells": [[0,0],[1,0],[2,0],[2,1],[2,2]],       "weight": 3, "unlock_level": 6 },
-    { "id": "square3",  "cells": [[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]], "weight": 2, "unlock_level": 8 },
-    { "id": "plus5",    "cells": [[0,1],[1,0],[1,1],[1,2],[2,1]],       "weight": 2, "unlock_level": 10 }
+    { "id": "mono", "cells": [[0, 0]], "weight": 6, "unlock_level": 1 },
+    { "id": "domino_h", "cells": [[0, 0], [0, 1]], "weight": 8, "unlock_level": 1 },
+    { "id": "domino_v", "cells": [[0, 0], [1, 0]], "weight": 8, "unlock_level": 1 },
+    { "id": "tri_h", "cells": [[0, 0], [0, 1], [0, 2]], "weight": 7, "unlock_level": 1 },
+    { "id": "tri_v", "cells": [[0, 0], [1, 0], [2, 0]], "weight": 7, "unlock_level": 1 },
+    { "id": "square2", "cells": [[0, 0], [0, 1], [1, 0], [1, 1]], "weight": 7, "unlock_level": 1 },
+    { "id": "corner_s", "cells": [[0, 0], [1, 0], [1, 1]], "weight": 6, "unlock_level": 1 },
+    { "id": "l4", "cells": [[0, 0], [1, 0], [2, 0], [2, 1]], "weight": 5, "unlock_level": 2 },
+    { "id": "j4", "cells": [[0, 0], [0, 1], [1, 1], [2, 1]], "weight": 5, "unlock_level": 2 },
+    { "id": "t4", "cells": [[0, 0], [0, 1], [0, 2], [1, 1]], "weight": 5, "unlock_level": 3 },
+    { "id": "s4", "cells": [[0, 1], [0, 2], [1, 0], [1, 1]], "weight": 4, "unlock_level": 4 },
+    { "id": "z4", "cells": [[0, 0], [0, 1], [1, 1], [1, 2]], "weight": 4, "unlock_level": 4 },
+    { "id": "line4_h", "cells": [[0, 0], [0, 1], [0, 2], [0, 3]], "weight": 4, "unlock_level": 3 },
+    { "id": "line4_v", "cells": [[0, 0], [1, 0], [2, 0], [3, 0]], "weight": 4, "unlock_level": 3 },
+    { "id": "line5_h", "cells": [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4]], "weight": 3, "unlock_level": 5 },
+    { "id": "line5_v", "cells": [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]], "weight": 3, "unlock_level": 5 },
+    { "id": "corner_l", "cells": [[0, 0], [1, 0], [2, 0], [2, 1], [2, 2]], "weight": 3, "unlock_level": 6 },
+    { "id": "square3", "cells": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "weight": 2, "unlock_level": 8 },
+    { "id": "plus5", "cells": [[0, 1], [1, 0], [1, 1], [1, 2], [2, 1]], "weight": 2, "unlock_level": 10 }
   ],
-
   "scoring": {
     "points_per_cell_placed": 1,
-    "points_per_line": 10,
-    "multi_line_bonus": [0, 0, 20, 50, 100, 160, 240],
+    "points_per_line": 80,
+    "multi_line_bonus": [0, 0, 40, 100, 200, 320, 480, 640, 800],
     "same_color_line_multiplier": 2.0,
     "combo": {
       "enabled": true,
@@ -58,13 +54,12 @@
     },
     "board_clear_bonus": 300
   },
-
   "levels": {
     "infinite": true,
-    "target_score_base": 300,
-    "target_score_growth": 1.12,
-    "target_score_linear_step": 50,
-    "target_score_cap": 500000,
+    "target_score_base": 400,
+    "target_score_growth": 1.04,
+    "target_score_linear_step": 60,
+    "target_score_cap": 60000,
     "difficulty": {
       "hard_piece_weight_gain_per_level": 0.06,
       "easy_piece_weight_loss_per_level": 0.03,
@@ -78,12 +73,14 @@
       "stone_block_hits_to_break": 2,
       "guaranteed_fit_chance_start": 1.0,
       "guaranteed_fit_chance_min": 0.6,
-      "guaranteed_fit_decay_per_level": 0.01
+      "guaranteed_fit_decay_per_level": 0.01,
+      "hard_piece_min_cells": 4,
+      "colors_start": 4,
+      "colors_add_every_n_levels": 5
     },
     "milestones_every_n_levels": 10,
     "milestone_reward_coins": 50
   },
-
   "economy": {
     "starting_coins": 100,
     "coins_per_level_complete": 10,
@@ -91,7 +88,6 @@
     "rotate_cost_coins": 20,
     "refresh_tray_cost_coins": 40
   },
-
   "ads": {
     "enabled": true,
     "banner": {
@@ -110,21 +106,32 @@
     },
     "rewarded": {
       "enabled": true,
-      "revive": { "enabled": true, "max_per_level": 1, "clears_cells": 12 },
-      "double_coins": { "enabled": true },
-      "free_hint": { "enabled": true },
-      "refresh_tray": { "enabled": true },
+      "revive": {
+        "enabled": true,
+        "max_per_level": 1,
+        "clears_cells": 12
+      },
+      "double_coins": {
+        "enabled": true
+      },
+      "free_hint": {
+        "enabled": true
+      },
+      "refresh_tray": {
+        "enabled": true
+      },
       "max_per_session": 15
-    },
-    "app_open": { "enabled": false }
+    }
   },
-
   "features": {
     "daily_reward": true,
     "daily_reward_coins": [20, 30, 40, 50, 60, 80, 150],
     "haptics_default": true,
     "sound_default": true,
-    "music_default": true,
     "tutorial": true
+  },
+  "classic": {
+    "difficulty_level_every_points": 1500,
+    "max_difficulty_level": 40
   }
 }
