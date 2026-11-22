@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "configVersion": 1,
+  "configVersion": 2,
   "ads": {
     "enabled": true,
     "bannerEnabled": true,
@@ -34,6 +34,8 @@
     "latestVersionCode": 1,
     "minVersionCode": 1,
     "privacyPolicyUrl": "",
-    "storeUrl": ""
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.fuino.watersort.color.puzzle.game",
+    "reviewPromptEnabled": true,
+    "reviewPromptLevel": 3
   }
 }
