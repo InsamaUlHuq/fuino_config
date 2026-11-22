@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "ads": {
+    "enabled": true,
+    "bannerEnabled": true,
+    "interstitialEveryNLevels": 3,
+    "interstitialMinIntervalSec": 60,
+    "firstInterstitialAfterLevel": 5,
+    "rewardedEnabled": true,
+    "appOpenEnabled": false
+  },
+  "game": { "maxUndosPerLevel": 5, "extraTubeViaRewarded": true },
+  "app": { "minVersionCode": 1, "latestVersionCode": 1, "forceUpdate": false,
+           "privacyPolicyUrl": "https://...", "moreGamesUrl": "" }
+}
