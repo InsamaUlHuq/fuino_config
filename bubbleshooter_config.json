@@ -1,0 +1,92 @@
+{
+  "configVersion": 1,
+  "updatedAt": "2026-11-22T00:00:00Z",
+
+  "app": {
+    "minSupportedVersionCode": 1,
+    "latestVersionCode": 1,
+    "forceUpdateMessage": "A new version of Bubble Shooter: Color Pop is available. Please update to keep playing.",
+    "privacyPolicyUrl": "https://example.com/privacy",
+    "termsUrl": "https://example.com/terms",
+    "supportEmail": "support@example.com",
+    "maintenanceMode": false,
+    "maintenanceMessage": ""
+  },
+
+  "ads": {
+    "enabled": true,
+    "banner": {
+      "enabled": true,
+      "showOnScreens": ["home", "levelComplete", "gameOver"],
+      "showDuringGameplay": true
+    },
+    "interstitial": {
+      "enabled": true,
+      "firstShowAfterLevel": 3,
+      "showEveryNLevels": 2,
+      "minSecondsBetween": 90,
+      "maxPerSession": 8,
+      "showOnGameOver": true,
+      "preAdNoticeSeconds": 2,
+      "preAdNoticeText": "Showing ads"
+    },
+    "rewarded": {
+      "enabled": true,
+      "dailyLimit": 20,
+      "rewards": {
+        "extraMoves": 5,
+        "coinsAmount": 50,
+        "continueAfterGameOver": true,
+        "doubleLevelCoins": true
+      }
+    }
+  },
+
+  "economy": {
+    "startingCoins": 100,
+    "coinsPerLevelBase": 10,
+    "coinsPerStar": 5,
+    "boosterPrices": {
+      "bomb": 60,
+      "fireball": 80,
+      "rainbow": 100,
+      "aimGuide": 40
+    }
+  },
+
+  "difficulty": {
+    "startRows": 5,
+    "maxRows": 14,
+    "rowsAddedEveryNLevels": 4,
+    "startColors": 3,
+    "maxColors": 7,
+    "colorAddedEveryNLevels": 8,
+    "startMoves": 30,
+    "minMoves": 14,
+    "movesLostEveryNLevels": 5,
+    "ceilingDropEveryNShots": 0,
+    "ceilingDropStartsAtLevel": 20,
+    "ceilingDropMinShots": 6,
+    "obstacleStartLevel": 15,
+    "obstacleChanceMax": 0.15,
+    "sameColorClusterBias": 0.55,
+    "clusterBiasDecayPerLevel": 0.004,
+    "clusterBiasMin": 0.25,
+    "bossLevelEvery": 10
+  },
+
+  "scoring": {
+    "pointsPerPop": 10,
+    "pointsPerDrop": 20,
+    "comboMultiplierStep": 0.5,
+    "starThresholdsPercentOfMax": [0.35, 0.6, 0.85]
+  },
+
+  "game": {
+    "bubbleColors": ["#E8202A", "#FFC107", "#3CB516", "#1EC8E0", "#9B1FE0", "#FF6FB5", "#FF8A1E"],
+    "showAimLineLength": 0.6,
+    "allowBubbleSwap": true,
+    "dailyRewardEnabled": true,
+    "dailyRewardCoins": [20, 30, 40, 50, 60, 80, 150]
+  }
+}
