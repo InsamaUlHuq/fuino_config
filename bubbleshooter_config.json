@@ -1,7 +1,6 @@
 {
   "configVersion": 1,
   "updatedAt": "2026-11-22T00:00:00Z",
-
   "app": {
     "minSupportedVersionCode": 1,
     "latestVersionCode": 1,
@@ -10,14 +9,18 @@
     "termsUrl": "https://example.com/terms",
     "supportEmail": "support@example.com",
     "maintenanceMode": false,
-    "maintenanceMessage": ""
+    "maintenanceMessage": "",
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.bubbleshooter.color.pop.puzzle"
   },
-
   "ads": {
     "enabled": true,
     "banner": {
       "enabled": true,
-      "showOnScreens": ["home", "levelComplete", "gameOver"],
+      "showOnScreens": [
+        "home",
+        "levelComplete",
+        "gameOver"
+      ],
       "showDuringGameplay": true
     },
     "interstitial": {
@@ -41,7 +44,14 @@
       }
     }
   },
-
+  "review": {
+    "enabled": true,
+    "askAfterLevel": 3,
+    "askAgainAfterLevels": 0,
+    "storeUrl": "https://play.google.com/store/apps/details?id=com.bubbleshooter.color.pop.puzzle",
+    "title": "Enjoying Bubble Shooter: Color Pop?",
+    "message": "Please take a moment to rate us on Google Play."
+  },
   "economy": {
     "startingCoins": 100,
     "coinsPerLevelBase": 10,
@@ -51,9 +61,9 @@
       "fireball": 80,
       "rainbow": 100,
       "aimGuide": 40
-    }
+    },
+    "extraMovesPrice": 60
   },
-
   "difficulty": {
     "startRows": 5,
     "maxRows": 14,
@@ -72,21 +82,40 @@
     "sameColorClusterBias": 0.55,
     "clusterBiasDecayPerLevel": 0.004,
     "clusterBiasMin": 0.25,
-    "bossLevelEvery": 10
+    "bossLevelEvery": 10,
+    "movesFloorBubblesPerMove": 5.0
   },
-
   "scoring": {
     "pointsPerPop": 10,
     "pointsPerDrop": 20,
     "comboMultiplierStep": 0.5,
-    "starThresholdsPercentOfMax": [0.35, 0.6, 0.85]
+    "starThresholdsPercentOfMax": [
+      0.35,
+      0.6,
+      0.85
+    ]
   },
-
   "game": {
-    "bubbleColors": ["#E8202A", "#FFC107", "#3CB516", "#1EC8E0", "#9B1FE0", "#FF6FB5", "#FF8A1E"],
+    "bubbleColors": [
+      "#E8202A",
+      "#FFC107",
+      "#3CB516",
+      "#1EC8E0",
+      "#9B1FE0",
+      "#FF6FB5",
+      "#FF8A1E"
+    ],
     "showAimLineLength": 0.6,
     "allowBubbleSwap": true,
     "dailyRewardEnabled": true,
-    "dailyRewardCoins": [20, 30, 40, 50, 60, 80, 150]
+    "dailyRewardCoins": [
+      20,
+      30,
+      40,
+      50,
+      60,
+      80,
+      150
+    ]
   }
 }
