@@ -120,7 +120,7 @@
       "drops": {
         "power_core": 0.35,
         "coin": 0.45,
-        "shield": 0.06,
+        "shield": 0.15,
         "rapid_fire": 0.05,
         "magnet": 0.04,
         "extra_life": 0.008
@@ -194,7 +194,7 @@
       "movement": {
         "type": "formation_sway",
         "speed": 1.0,
-        "swayAmplitude": 0.8
+        "swayAmplitude": 0.5
       },
       "spawnWeight": 2,
       "drops": {
