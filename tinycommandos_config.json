@@ -7,9 +7,9 @@
     "_comment": "The commando on foot and while falling.",
     "maxHealth": 100,
     "walkSpeed": 3.5,
-    "walkSpeed_comment": "Walking speed on the ground (was 4.6 before; now a quarter of that).",
+    "walkSpeed_comment": "Walking speed on the ground.",
     "airSpeed": 4.0,
-    "airSpeed_comment": "Top sideways speed while flying or falling (half of the old 4.6).",
+    "airSpeed_comment": "Top sideways speed while flying or falling.",
     "airControl": 30,
     "airControl_comment": "How quickly the sideways speed can change while in the air (units/s per second). Higher = snappier steering when flying.",
     "gravity": 6,
@@ -28,14 +28,38 @@
     "fallDepthHeights_comment": "How far below the bottom of the map a player can fall before dying ('Killed by fall damage'): 1 = one map height. The camera follows the fall down to here."
   },
 
+  "controls": {
+    "_comment": "Aiming on the touch screen.",
+    "aimTurnSpeedDeg": 900,
+    "aimTurnSpeedDeg_comment": "Aim sensitivity: how fast the gun turns toward where the aim stick points, in degrees per second. Lower = smoother and steadier, higher = snappier; 5000 = instant. (Mouse aim on desktop is always instant.)",
+    "aimGuide": true,
+    "aimGuide_comment": "Show dots along the line the commando is aiming (only you see your own).",
+    "aimGuideDots": 3,
+    "aimGuideSpacing": 0.55,
+    "aimGuideStart": 0.45,
+    "aimGuideSpacing_comment": "Gap between the dots; aimGuideStart = distance from the gun's muzzle to the first dot.",
+    "playerIndicators": true,
+    "playerIndicators_comment": "Arrows at the screen edge pointing to off-screen players: red = enemy, green = teammate."
+  },
+
+  "camera": {
+    "_comment": "How much of the map the player sees. Long-range guns have a scope (weapons -> scope) that pulls the camera out to see further.",
+    "normalViewHeight": 8.8,
+    "normalViewHeight_comment": "Height of the view with a 1x scope (pistol), in units. A commando is ~1.3 units tall; the map is 14 tall.",
+    "viewPerScopeLevel": 0.17,
+    "viewPerScopeLevel_comment": "Extra view per scope level: view = normalViewHeight x (1 + (scope - 1) x this). With 0.17: 2x = 1.17, 4x = 1.51, 7x = 2.02 times the normal view.",
+    "zoomSpeed": 3,
+    "zoomSpeed_comment": "How quickly the view changes after switching weapons."
+  },
+
   "jetpack": {
     "_comment": "Rocket boots. To START them the move stick must point between 11 and 1 o'clock. Once flying, the stick can roll down to 8 / 4 o'clock: at 12 they climb, toward 3 / 9 the climb eases into a hover that holds height, and toward 8 / 4 they let the player sink gently. Beyond 8 / 4 (or letting go) they switch off. Fuel drains by how hard they work and comes back slowly whenever they're off (in the air or on the ground) - landing does NOT refill it.",
     "fuelMax": 140,
     "fuelMax_comment": "Size of the fuel tank (the blue bar under health).",
     "drainPerSecond": 20,
-    "drainPerSecond_comment": "Fuel used per second at full climb. fuelMax / drainPerSecond = seconds of non-stop climbing (100 / 10 = 10 s). Hovering and descending use less (see hoverFuelShare, descentFuelShare).",
+    "drainPerSecond_comment": "Fuel used per second at full climb. fuelMax / drainPerSecond = seconds of non-stop climbing (140 / 20 = 7 s). Hovering and descending use less (see hoverFuelShare, descentFuelShare).",
     "regainPerSecond": 20,
-    "regainPerSecond_comment": "Fuel regained per second while the boots are off. fuelMax / regainPerSecond = seconds to refill from empty (100 / 8 = 12.5 s).",
+    "regainPerSecond_comment": "Fuel regained per second while the boots are off. fuelMax / regainPerSecond = seconds to refill from empty (140 / 20 = 7 s).",
     "regainDelaySeconds": 0.6,
     "regainDelaySeconds_comment": "Wait after the boots switch off before fuel starts coming back.",
     "minFuelToStart": 3,
@@ -66,13 +90,15 @@
   "flight": {
     "_comment": "How the commando looks while in the air. Looks only - doesn't change movement.",
     "maxBodyTiltDeg": 35,
-    "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways (full lean at airSpeed). 30 = head at 1 o'clock (or 11 when flying left), 60 = 2 o'clock (or 10), 0 = no lean.",
+    "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways (full lean at airSpeed). No lean while going down (sinking or falling). 30 = head at 1 o'clock (or 11 when flying left), 60 = 2 o'clock (or 10), 0 = no lean.",
     "tiltSpeed": 7,
     "tiltSpeed_comment": "How quickly the body leans and straightens up again. Higher = quicker.",
     "legCycleSpeed": 9,
     "legCycleSpeed_comment": "Speed of the slow 'walking' leg motion in the air that makes the commando look like he's balancing.",
     "legSwingDeg": 24,
     "legSwingDeg_comment": "How far the legs swing in that motion (degrees).",
+    "flameScale": 1.7,
+    "flameScale_comment": "Size of the rocket-boot flames (1 = the original size, 1.7 = 70% bigger).",
     "smokeTrail": true,
     "smokeTrail_comment": "true = rocket boots leave a smoke trail, false = flames only.",
     "smokePuffsPerSecond": 26,
@@ -109,10 +135,10 @@
   },
 
   "melee": {
-    "_comment": "The knife button (or firing at an enemy right next to you): a gun-butt strike.",
+    "_comment": "The fist button (or firing at an enemy right next to you): a punch at head height toward the side you face.",
     "damage": 100,
     "range": 0.85,
-    "range_comment": "Reach in front of the player.",
+    "range_comment": "Reach in front of the player's head.",
     "cooldownSeconds": 0.55,
     "knockback": 6,
     "knockback_comment": "How hard a hit shoves the enemy back."
@@ -141,12 +167,12 @@
   },
 
   "weapons": {
-    "_comment": "Per weapon: damage per bullet; pellets per shot (shotgun); spreadDeg = random aim error; fireInterval = seconds between shots (lower = faster); magSize = bullets per magazine; reserveMax = spare bullets (-1 = unlimited); reloadSeconds; range = how far bullets reach.",
-    "pistol":  { "damage": 18, "pellets": 1, "spreadDeg": 2,  "fireInterval": 0.28, "magSize": 12, "reserveMax": -1,  "reloadSeconds": 1.0, "range": 13 },
-    "smg":     { "damage": 9,  "pellets": 1, "spreadDeg": 6,  "fireInterval": 0.07, "magSize": 32, "reserveMax": 128, "reloadSeconds": 1.4, "range": 11 },
-    "ak":      { "damage": 15, "pellets": 1, "spreadDeg": 3,  "fireInterval": 0.12, "magSize": 30, "reserveMax": 90,  "reloadSeconds": 1.6, "range": 15 },
-    "shotgun": { "damage": 11, "pellets": 7, "spreadDeg": 16, "fireInterval": 0.8,  "magSize": 6,  "reserveMax": 24,  "reloadSeconds": 2.0, "range": 7 },
-    "sniper":  { "damage": 90, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.3,  "magSize": 5,  "reserveMax": 15,  "reloadSeconds": 2.2, "range": 32 },
-    "rpg":     { "damage": 95, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.6,  "magSize": 1,  "reserveMax": 4,   "reloadSeconds": 1.8, "range": 40 }
+    "_comment": "Per weapon: damage per bullet; pellets per shot (shotgun); spreadDeg = random aim error; fireInterval = seconds between shots (lower = faster); magSize = bullets per magazine; reserveMax = spare bullets (-1 = unlimited); reloadSeconds; range = how far bullets reach; scope = how far the camera pulls out while holding it (1 = normal view, 7 = widest).",
+    "pistol":  { "damage": 18, "pellets": 1, "spreadDeg": 2,  "fireInterval": 0.28, "magSize": 12, "reserveMax": -1,  "reloadSeconds": 1.0, "range": 13, "scope": 1 },
+    "smg":     { "damage": 9,  "pellets": 1, "spreadDeg": 6,  "fireInterval": 0.07, "magSize": 32, "reserveMax": 128, "reloadSeconds": 1.4, "range": 11, "scope": 3 },
+    "ak":      { "damage": 15, "pellets": 1, "spreadDeg": 3,  "fireInterval": 0.12, "magSize": 30, "reserveMax": 90,  "reloadSeconds": 1.6, "range": 15, "scope": 4 },
+    "shotgun": { "damage": 11, "pellets": 7, "spreadDeg": 16, "fireInterval": 0.8,  "magSize": 6,  "reserveMax": 24,  "reloadSeconds": 2.0, "range": 7, "scope": 2 },
+    "sniper":  { "damage": 90, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.3,  "magSize": 5,  "reserveMax": 15,  "reloadSeconds": 2.2, "range": 32, "scope": 7 },
+    "rpg":     { "damage": 95, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.6,  "magSize": 1,  "reserveMax": 4,   "reloadSeconds": 1.8, "range": 40, "scope": 6 }
   }
 }
