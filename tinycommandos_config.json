@@ -43,13 +43,15 @@
   },
 
   "camera": {
-    "_comment": "How much of the map the player sees. Long-range guns have a scope (weapons -> scope) that pulls the camera out to see further.",
+    "_comment": "How much of the map the player sees, and the scope. Tune these on the reference phone; other screens are fitted automatically (see referenceAspect).",
     "normalViewHeight": 8.8,
-    "normalViewHeight_comment": "Height of the view with a 1x scope (pistol), in units. A commando is ~1.3 units tall; the map is 14 tall.",
-    "viewPerScopeLevel": 0.17,
-    "viewPerScopeLevel_comment": "Extra view per scope level: view = normalViewHeight x (1 + (scope - 1) x this). With 0.17: 2x = 1.17, 4x = 1.51, 7x = 2.02 times the normal view.",
+    "normalViewHeight_comment": "Height of the view at 1x, in units, on the reference phone. A commando is ~1.3 units tall; the map is 14 tall. Smaller = closer.",
+    "referenceAspect": 2.2,
+    "referenceAspect_comment": "Screen shape of the phone used for tuning: long side / short side (e.g. 2400 x 1080 = 2.22, 3168 x 1440 = 2.2). Every other phone or tablet is fitted so it shows at least the same width and height of the map as the reference phone - never less.",
+    "scopeViews": [1.0, 1.17, 1.34, 1.51, 1.68, 1.85, 2.02],
+    "scopeViews_comment": "View size for each scope level, in order: 1x, 2x, 3x, 4x, 5x, 6x, 7x (1.0 = normal view, 2.0 = twice as much map in each direction). The scope button steps through them up to the gun's max (weapons -> scope).",
     "zoomSpeed": 3,
-    "zoomSpeed_comment": "How quickly the view changes after switching weapons."
+    "zoomSpeed_comment": "How quickly the view changes after tapping the scope button."
   },
 
   "jetpack": {
@@ -135,7 +137,7 @@
   },
 
   "melee": {
-    "_comment": "The fist button (or firing at an enemy right next to you): a punch at head height toward the side you face.",
+    "_comment": "The melee button (or firing at an enemy right next to you): the player swings the gun from 12 o'clock down to 3 o'clock and hits at head height toward the side they face.",
     "damage": 100,
     "range": 0.85,
     "range_comment": "Reach in front of the player's head.",
@@ -167,7 +169,7 @@
   },
 
   "weapons": {
-    "_comment": "Per weapon: damage per bullet; pellets per shot (shotgun); spreadDeg = random aim error; fireInterval = seconds between shots (lower = faster); magSize = bullets per magazine; reserveMax = spare bullets (-1 = unlimited); reloadSeconds; range = how far bullets reach; scope = how far the camera pulls out while holding it (1 = normal view, 7 = widest).",
+    "_comment": "Per weapon: damage per bullet; pellets per shot (shotgun); spreadDeg = random aim error; fireInterval = seconds between shots (lower = faster); magSize = bullets per magazine; reserveMax = spare bullets (-1 = unlimited); reloadSeconds; range = how far bullets reach; scope = the highest scope level the scope button can reach with this gun (1 = no scope, 7 = widest).",
     "pistol":  { "damage": 18, "pellets": 1, "spreadDeg": 2,  "fireInterval": 0.28, "magSize": 12, "reserveMax": -1,  "reloadSeconds": 1.0, "range": 13, "scope": 1 },
     "smg":     { "damage": 9,  "pellets": 1, "spreadDeg": 6,  "fireInterval": 0.07, "magSize": 32, "reserveMax": 128, "reloadSeconds": 1.4, "range": 11, "scope": 3 },
     "ak":      { "damage": 15, "pellets": 1, "spreadDeg": 3,  "fireInterval": 0.12, "magSize": 30, "reserveMax": 90,  "reloadSeconds": 1.6, "range": 15, "scope": 4 },
