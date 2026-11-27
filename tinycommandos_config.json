@@ -1,0 +1,129 @@
+{
+  "_comment": "Tiny Commandos: Militia Warfare - game tuning. Change the numbers, keep the key names. Keys ending in _comment are notes for people; the game ignores them. Distances are in units (a commando is about 1.3 units tall), times in seconds, speeds in units per second. Values outside safe limits are clamped by the game. In a match, every player uses the HOST's values.",
+  "version": 1,
+  "version_comment": "Bump this when you change the file, so it's easy to tell versions apart.",
+
+  "player": {
+    "_comment": "The commando on foot and while falling.",
+    "maxHealth": 100,
+    "moveSpeed": 4.6,
+    "moveSpeed_comment": "Walking speed, and the top sideways speed in the air.",
+    "airControl": 18,
+    "airControl_comment": "How quickly the sideways speed can change while in the air (units/s per second). Higher = snappier steering when flying.",
+    "gravity": 12,
+    "gravity_comment": "Downward pull when the rocket boots are off (units/s per second). Earth-like is 9.8; the old value was 29.4. Lower = floatier.",
+    "maxFallSpeed": 10,
+    "maxFallSpeed_comment": "Players never fall faster than this.",
+    "spawnProtectionSeconds": 2,
+    "spawnProtectionSeconds_comment": "After respawning, a player can't be hurt for this long (they blink)."
+  },
+
+  "jetpack": {
+    "_comment": "Rocket boots. They fire while the move stick points between 11 and 1 o'clock. Fuel drains while firing and comes back slowly whenever they're off (in the air or on the ground) - landing does NOT refill it.",
+    "fuelMax": 100,
+    "fuelMax_comment": "Size of the fuel tank (the blue bar under health).",
+    "drainPerSecond": 10,
+    "drainPerSecond_comment": "Fuel used per second of firing. fuelMax / drainPerSecond = seconds of non-stop flight (100 / 10 = 10 s).",
+    "regainPerSecond": 8,
+    "regainPerSecond_comment": "Fuel regained per second while the boots are off. fuelMax / regainPerSecond = seconds to refill from empty (100 / 8 = 12.5 s).",
+    "regainDelaySeconds": 0.6,
+    "regainDelaySeconds_comment": "Wait after the boots switch off before fuel starts coming back.",
+    "minFuelToStart": 3,
+    "minFuelToStart_comment": "The boots won't start with less fuel than this (stops sputtering on an empty tank).",
+    "thrustAcceleration": 24,
+    "thrustAcceleration_comment": "How quickly the boots reach full climbing speed.",
+    "maxRiseSpeed": 5.5,
+    "maxRiseSpeed_comment": "Fastest climbing speed.",
+    "triggerHalfAngleDeg": 30,
+    "triggerHalfAngleDeg_comment": "How far from straight up the stick can point and still fire the boots. 30 = between 11 and 1 o'clock; 45 = halfway to 9/3 o'clock.",
+    "stickDeadZone": 0.45,
+    "stickDeadZone_comment": "How far the stick must be pushed (0 = centre, 1 = edge) before the boots fire."
+  },
+
+  "flight": {
+    "_comment": "How the commando looks while in the air. Looks only - doesn't change movement.",
+    "maxBodyTiltDeg": 60,
+    "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways. 30 = head at 1 o'clock (or 11), 60 = 2 o'clock (or 10), 0 = no lean.",
+    "tiltSpeed": 7,
+    "tiltSpeed_comment": "How quickly the body leans and straightens up again. Higher = quicker.",
+    "legCycleSpeed": 9,
+    "legCycleSpeed_comment": "Speed of the slow 'walking' leg motion in the air that makes the commando look like he's balancing.",
+    "legSwingDeg": 24,
+    "legSwingDeg_comment": "How far the legs swing in that motion (degrees).",
+    "smokeTrail": true,
+    "smokeTrail_comment": "true = rocket boots leave a smoke trail, false = flames only.",
+    "smokePuffsPerSecond": 26,
+    "smokePuffsPerSecond_comment": "Puffs per second from each boot. Lower if older phones slow down with many players flying.",
+    "smokeLifetime": 0.8,
+    "smokeLifetime_comment": "How long each puff stays before fading away.",
+    "smokeStartSize": 0.14,
+    "smokeEndSize": 0.55,
+    "smokeEndSize_comment": "Puffs grow from smokeStartSize to smokeEndSize while they fade.",
+    "smokeOpacity": 0.45,
+    "smokeOpacity_comment": "0 = invisible, 1 = solid."
+  },
+
+  "throwables": {
+    "_comment": "Grenades and smoke grenades. They leave the hand at throwSpeed in the aim direction, then gravity bends the path into an arc.",
+    "throwSpeed": 13,
+    "throwSpeed_comment": "Throw speed. Higher = flatter, longer throws.",
+    "gravity": 14,
+    "gravity_comment": "Downward pull on thrown grenades (units/s per second). Lower = straighter path toward where you aim.",
+    "inheritPlayerVelocity": 0.3,
+    "inheritPlayerVelocity_comment": "Share of the thrower's own movement added to the throw (0 = none, 1 = all).",
+    "bounciness": 0.42,
+    "bounciness_comment": "Speed kept after bouncing off the ground (0 = stops dead, 1 = perfect bounce).",
+    "fragFuseSeconds": 2.2,
+    "fragFuseSeconds_comment": "Time from throw to explosion (smoke grenades pop after the same time).",
+    "fragRadius": 2.2,
+    "fragDamage": 95,
+    "fragDamage_comment": "Damage at the centre of the blast; it falls off toward the edge of fragRadius. Throwers take half damage from their own grenade.",
+    "smokeRadius": 2.8,
+    "smokeDurationSeconds": 7,
+    "startFrags": 2,
+    "startSmokes": 1,
+    "startFrags_comment": "Grenades each player starts with (also what ammo boxes top up to)."
+  },
+
+  "melee": {
+    "_comment": "The knife button (or firing at an enemy right next to you): a gun-butt strike.",
+    "damage": 40,
+    "range": 0.85,
+    "range_comment": "Reach in front of the player.",
+    "cooldownSeconds": 0.55,
+    "knockback": 6,
+    "knockback_comment": "How hard a hit shoves the enemy back."
+  },
+
+  "rocket": {
+    "_comment": "Rocket launcher projectile (damage is in weapons.rpg).",
+    "speed": 15,
+    "blastRadius": 2
+  },
+
+  "pickups": {
+    "_comment": "Things lying on the map.",
+    "medkitDropEverySeconds": 120,
+    "medkitDropJitterSeconds": 20,
+    "medkitDrop_comment": "A health pack drops at a random spot every medkitDropEverySeconds, give or take medkitDropJitterSeconds (120 +/- 20 = every 100-140 s). Never more than one on the map.",
+    "medkitHeal": 60,
+    "respawnSeconds": 20,
+    "respawnSeconds_comment": "How long before a used weapon or ammo spot fills up again."
+  },
+
+  "feedback": {
+    "_comment": "Phone vibration.",
+    "vibrateWhenHit": false,
+    "vibrateWhenHit_comment": "true = the phone vibrates when you're hit (if the player also has Vibration on in Settings)."
+  },
+
+  "weapons": {
+    "_comment": "Per weapon: damage per bullet; pellets per shot (shotgun); spreadDeg = random aim error; fireInterval = seconds between shots (lower = faster); magSize = bullets per magazine; reserveMax = spare bullets (-1 = unlimited); reloadSeconds; range = how far bullets reach.",
+    "pistol":  { "damage": 18, "pellets": 1, "spreadDeg": 2,  "fireInterval": 0.28, "magSize": 12, "reserveMax": -1,  "reloadSeconds": 1.0, "range": 13 },
+    "smg":     { "damage": 9,  "pellets": 1, "spreadDeg": 6,  "fireInterval": 0.07, "magSize": 32, "reserveMax": 128, "reloadSeconds": 1.4, "range": 11 },
+    "ak":      { "damage": 15, "pellets": 1, "spreadDeg": 3,  "fireInterval": 0.12, "magSize": 30, "reserveMax": 90,  "reloadSeconds": 1.6, "range": 15 },
+    "shotgun": { "damage": 11, "pellets": 7, "spreadDeg": 16, "fireInterval": 0.8,  "magSize": 6,  "reserveMax": 24,  "reloadSeconds": 2.0, "range": 7 },
+    "sniper":  { "damage": 90, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.3,  "magSize": 5,  "reserveMax": 15,  "reloadSeconds": 2.2, "range": 32 },
+    "rpg":     { "damage": 95, "pellets": 1, "spreadDeg": 0,  "fireInterval": 1.6,  "magSize": 1,  "reserveMax": 4,   "reloadSeconds": 1.8, "range": 40 }
+  }
+}
