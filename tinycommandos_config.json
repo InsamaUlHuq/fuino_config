@@ -6,15 +6,15 @@
   "player": {
     "_comment": "The commando on foot and while falling.",
     "maxHealth": 100,
-    "walkSpeed": 1.15,
+    "walkSpeed": 1.5,
     "walkSpeed_comment": "Walking speed on the ground (was 4.6 before; now a quarter of that).",
-    "airSpeed": 2.3,
+    "airSpeed": 1.8,
     "airSpeed_comment": "Top sideways speed while flying or falling (half of the old 4.6).",
     "airControl": 18,
     "airControl_comment": "How quickly the sideways speed can change while in the air (units/s per second). Higher = snappier steering when flying.",
-    "gravity": 12,
+    "gravity": 8,
     "gravity_comment": "Downward pull when the rocket boots are off (units/s per second). Earth-like is 9.8; the old value was 29.4. Lower = floatier.",
-    "maxFallSpeed": 10,
+    "maxFallSpeed": 8,
     "maxFallSpeed_comment": "Players never fall faster than this.",
     "spawnProtectionSeconds": 2,
     "spawnProtectionSeconds_comment": "After respawning, a player can't be hurt for this long (they blink)."
@@ -65,7 +65,7 @@
 
   "flight": {
     "_comment": "How the commando looks while in the air. Looks only - doesn't change movement.",
-    "maxBodyTiltDeg": 30,
+    "maxBodyTiltDeg": 35,
     "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways (full lean at airSpeed). 30 = head at 1 o'clock (or 11 when flying left), 60 = 2 o'clock (or 10), 0 = no lean.",
     "tiltSpeed": 7,
     "tiltSpeed_comment": "How quickly the body leans and straightens up again. Higher = quicker.",
