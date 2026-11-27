@@ -6,8 +6,10 @@
   "player": {
     "_comment": "The commando on foot and while falling.",
     "maxHealth": 100,
-    "moveSpeed": 4.6,
-    "moveSpeed_comment": "Walking speed, and the top sideways speed in the air.",
+    "walkSpeed": 1.15,
+    "walkSpeed_comment": "Walking speed on the ground (was 4.6 before; now a quarter of that).",
+    "airSpeed": 2.3,
+    "airSpeed_comment": "Top sideways speed while flying or falling (half of the old 4.6).",
     "airControl": 18,
     "airControl_comment": "How quickly the sideways speed can change while in the air (units/s per second). Higher = snappier steering when flying.",
     "gravity": 12,
@@ -16,6 +18,14 @@
     "maxFallSpeed_comment": "Players never fall faster than this.",
     "spawnProtectionSeconds": 2,
     "spawnProtectionSeconds_comment": "After respawning, a player can't be hurt for this long (they blink)."
+  },
+
+  "world": {
+    "_comment": "Invisible limits above and below the map (in map heights; the Jungle Outpost is 14 units tall).",
+    "ceilingHeights": 2,
+    "ceilingHeights_comment": "How high players can fly: 2 = twice the map height. The camera follows up to here; reaching it empties the rocket boots so the player falls back down.",
+    "fallDepthHeights": 1,
+    "fallDepthHeights_comment": "How far below the bottom of the map a player can fall before dying ('Killed by fall damage'): 1 = one map height. The camera follows the fall down to here."
   },
 
   "jetpack": {
@@ -42,8 +52,8 @@
 
   "flight": {
     "_comment": "How the commando looks while in the air. Looks only - doesn't change movement.",
-    "maxBodyTiltDeg": 60,
-    "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways. 30 = head at 1 o'clock (or 11), 60 = 2 o'clock (or 10), 0 = no lean.",
+    "maxBodyTiltDeg": 30,
+    "maxBodyTiltDeg_comment": "Lean toward the direction of travel when flying sideways (full lean at airSpeed). 30 = head at 1 o'clock (or 11 when flying left), 60 = 2 o'clock (or 10), 0 = no lean.",
     "tiltSpeed": 7,
     "tiltSpeed_comment": "How quickly the body leans and straightens up again. Higher = quicker.",
     "legCycleSpeed": 9,
