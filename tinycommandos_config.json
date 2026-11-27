@@ -99,7 +99,7 @@
     "fragFuseSeconds": 2.2,
     "fragFuseSeconds_comment": "Time from throw to explosion (smoke grenades pop after the same time).",
     "fragRadius": 2.2,
-    "fragDamage": 95,
+    "fragDamage": 250,
     "fragDamage_comment": "Damage at the centre of the blast; it falls off toward the edge of fragRadius. Throwers take half damage from their own grenade.",
     "smokeRadius": 2.8,
     "smokeDurationSeconds": 7,
@@ -110,7 +110,7 @@
 
   "melee": {
     "_comment": "The knife button (or firing at an enemy right next to you): a gun-butt strike.",
-    "damage": 40,
+    "damage": 100,
     "range": 0.85,
     "range_comment": "Reach in front of the player.",
     "cooldownSeconds": 0.55,
